@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
+// import img from "../../public/assets/img/aslid1.png"
 
 function Slider({AOS}) {
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
@@ -37,6 +38,13 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
     navText={['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>']}
     dots={true}
   >
+     <div>
+        <Image src="/assets/img/aslid1.png" alt="Image 1" width={500} height={300} />
+      </div>
+                 
+      <div>
+        <Image src="/assets/img/aslid2.png" alt="Image 1" width={500} height={300} />
+      </div>
 
   </OwlCarousel>
   )
