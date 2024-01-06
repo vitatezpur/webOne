@@ -23,7 +23,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-fontawesome": "^1.7.1",
-    "react-owl-carousel": "^2.3.3"
+    "react-icons": "^4.12.0",
+    "react-owl-carousel": "^2.3.3",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

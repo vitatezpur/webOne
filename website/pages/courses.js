@@ -5,57 +5,21 @@ import { Menu, X, Check } from 'lucide-react'
 // import Navbar from '@/components/common/Navbar'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import CourseCard from '@/components/CourseCard'
 
-const menuItems = [
+const courseInfo=[
   {
-    name: 'Home',
-    href: '#',
-  },
-  {
-    name: 'About',
-    href: '#',
-  },
-  {
-    name: 'Contact',
-    href: '#',
-  },
+    key:1,
+    titel: " PGDCA",
+    duration:"12 Month",
+    img:"https://placekitten.com/300/200",
+    description:" some text for Description of the course.Some more text for Description of the course.",
+    tags: ["PGDCA","Word","Excel","Tally","Canva"]
+  }
 ]
 
-const plans = [
-  {
-    name: 'Basic plan',
-    price: '$10/mth',
-    features: [
-      'Access to all basic features ',
-      'Basic reporting and analytics',
-      'Up to 10 individual users',
-      '20GB individual data each user',
-      'Basic chat and email support',
-    ],
-  },
-  {
-    name: 'Business plan',
-    price: '$20/mth',
-    features: [
-      '200+ integrations',
-      'Advanced reporting and analytics',
-      'Up to 20 individual users',
-      '40GB individual data each user',
-      'Priority chat and email support',
-    ],
-  },
-  {
-    name: 'Enterprise plan',
-    price: '$40/mth',
-    features: [
-      'Advanced custom fields',
-      'Audit log and data history',
-      'Unlimited individual users',
-      'Unlimited individual data',
-      'Personalized+priority service',
-    ],
-  },
-]
+
+
 
 const faqs = [
   [
@@ -110,58 +74,23 @@ export default function PricingPageOne() {
         {/* Hero Section */}
         <div className="flex flex-col space-y-8 pb-10 pt-12 text-center md:pt-24">
           <p className="text-3xl font-bold text-gray-900 md:text-5xl md:leading-10">
-            Simple, transparent pricing
+          Our Exclusive Courses
           </p>
           <p className="mx-auto max-w-3xl text-base text-gray-600 md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis voluptates
-            neque itaque repudiandae sint, explicabo assumenda quam ratione placeat?
+          At Vintage IT Academy, we provide cutting-edge courses meticulously designed for both career excellence and comprehensive development. Our curriculum integrates the latest industry advancements, offering hands-on training that goes beyond theoretical knowledge. 
           </p>
         </div>
-        <div className="mt-8 w-full space-y-4 md:mt-12">
-          <div className="grid space-y-8 lg:grid-cols-3 lg:space-x-8 lg:space-y-0">
-            {plans.map((plan) => (
-              <div key={plan.name} className=" rounded-2xl border border-gray-200 bg-white shadow">
-                <div className="flex w-full flex-col justify-start space-y-4 px-8 pt-10">
-                  <p className="text-4xl font-bold leading-10">{plan.price}</p>
-                  <div className="flex w-full flex-col items-start justify-start space-y-1">
-                    <p className="w-full text-xl font-semibold leading-loose text-gray-900">
-                      {plan.name}
-                    </p>
-                    <p className="w-full text-base leading-normal text-gray-600">
-                      Billed annually.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex w-full flex-col items-start justify-start px-8 pb-10 pt-8">
-                  <div className="flex w-full flex-col space-y-4">
-                    {plan.features.map((feature) => (
-                      <div key={feature} className="inline-flex w-full space-x-3">
-                        <div className="flex items-center justify-center rounded-full bg-gray-100 p-1">
-                          <Check className="h-4 w-4" />
-                        </div>
-                        <p className="w-full text-base leading-normal text-gray-600">{feature}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex w-full flex-col px-8 pb-8">
-                  <div className="flex w-full flex-col items-start justify-start space-y-3">
-                    <button
-                      type="button"
-                      className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    >
-                      Get Started
-                    </button>
-                    <button
-                      type="button"
-                      className="w-full rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    >
-                      Contact Us
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div className="mt-8 w-full space-y-4  md:mt-12">
+          <div className="grid space-y-8  lg:grid-cols-3 lg:space-x-8 lg:space-y-4">
+            {/* course card  start */}
+            {courseInfo.map((course)=>(
+                  <CourseCard key={course.key} title={course.titel} description={course.description} tags={course.tags} img={course.img} alt={course.description} duration={course.duration} />
+            )
+
+            )}        
+
+ {/* course card  start */}
+                 
           </div>
         </div>
         {/* FAQs */}
