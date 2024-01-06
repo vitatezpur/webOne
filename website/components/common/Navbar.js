@@ -30,9 +30,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="font-bold text-xl"><img className='w-[4rem]' src="assets/img/vintagLogo.png" /></div>
         <div className="hidden md:flex  space-x-4 items-center">
-        {menuItem.map((item) => (
-          // Rendering a component for each object
-          <Link href={item.href}>{item.name}</Link>
+        {menuItem.map((item,key) => (
+          <Link key={key} href={item.href}>{item.name}</Link>
         ))}
          
          <SignUpButton/>

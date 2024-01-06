@@ -5,11 +5,10 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { useState } from 'react';
 // import Slider from '@/components/home/Slider';
-// import AOS from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
 // import Hero from '@/components/home/Hero';
 import HeroTwo from '@/components/home/HeroTwo';
-import PopularCourseCard from '@/components/PopularCourseCard';
 
 
 const courseInfo=[
@@ -75,12 +74,8 @@ function index() {
     
     <Header/>
     <HeroTwo/>
-
-    
-    {/* <Hero/> */}
-    {/* <Slider AOS={AOS}/> */}
-    <CourseSec/>
-    
+    <CourseSec AOS={AOS}/>
+  
     <div className='p-20'>
       <h5 className='text-4xl'>Have a Dought ?</h5>
 <p className='text-sm'>Hey you can contact us anytime</p>
