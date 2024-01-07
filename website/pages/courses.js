@@ -1,11 +1,8 @@
-'use client'
-
-import React from 'react'
-import { Menu, X, Check } from 'lucide-react'
-// import Navbar from '@/components/common/Navbar'
-import Header from '@/components/common/Header'
-import Footer from '@/components/common/Footer'
-import CourseCard from '@/components/CourseCard'
+import React from 'react';
+import { Menu, X, Check } from 'lucide-react';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import CourseCard from '@/components/CourseCard';
 
 const courseInfo=[
   {
@@ -17,9 +14,6 @@ const courseInfo=[
     tags: ["PGDCA","Word","Excel","Tally","Canva"]
   }
 ]
-
-
-
 
 const faqs = [
   [
@@ -68,10 +62,8 @@ export default function PricingPageOne() {
   return (
     <>
     <Header/>
-    <div className="mx-auto max-w-7xl px-2 md:px-4">
-    
+    <div className="mx-auto max-w-7xl px-2 md:px-4">   
       <div>
-        {/* Hero Section */}
         <div className="flex flex-col space-y-8 pb-10 pt-12 text-center md:pt-24">
           <p className="text-3xl font-bold text-gray-900 md:text-5xl md:leading-10">
           Our Exclusive Courses
@@ -82,18 +74,14 @@ export default function PricingPageOne() {
         </div>
         <div className="mt-8 w-full space-y-4  md:mt-12">
           <div className="grid space-y-8  lg:grid-cols-3 lg:space-x-8 lg:space-y-4">
-            {/* course card  start */}
             {courseInfo.map((course)=>(
                   <CourseCard key={course.key} title={course.titel} description={course.description} tags={course.tags} img={course.img} alt={course.description} duration={course.duration} />
             )
 
             )}        
-
- {/* course card  start */}
                  
           </div>
         </div>
-        {/* FAQs */}
         <div className="mt-14 space-y-16 bg-white py-12">
           <div>
             <div className="">

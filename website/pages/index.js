@@ -68,12 +68,12 @@ const [formData,setFormData] = useState({name:'',email:'',mobile:'',course:'',me
     <HtmlHead/>
     
     <Header/>
-    <HeroTwo/>
+    <HeroTwo AOS={AOS}/>
     <ContactForm formData = {formData} setFormData = {setFormData}/>
     <CourseSec AOS={AOS}/>
-    <AlumniSection/>
-    <StudentTestimonials/>
-    <GlanceSec/>
+    <AlumniSection AOS={AOS}/>
+    <StudentTestimonials AOS={AOS}/>
+    <GlanceSec AOS={AOS}/>
     <Footer/>
    
     </>

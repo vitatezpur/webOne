@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const TestimonialSlider = () => {
+const TestimonialSlider = ({AOS}) => {
   const testimonialsData = [
     {
       id: 1,
@@ -38,8 +38,16 @@ const TestimonialSlider = () => {
     slidesToScroll: 1,
   };
 
+  useEffect(() => {
+    AOS.init({
+        disable: 'mobile'
+    });
+    AOS.refresh();
+  }, [AOS]);
+
+
   return (
-    <section className="relative w-full isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative w-full isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
       <div className="container mx-auto">
         <Slider {...settings}>
           {testimonialsData.map((testimonial) => (

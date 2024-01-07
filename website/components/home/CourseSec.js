@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Glide from "@glidejs/glide";
 
-export default function CourseSec() {
+export default function CourseSec({AOS}) {
   const courseInfo = [
     {// ... your course information array
     id:2,
@@ -76,10 +76,14 @@ useEffect(() => {
           perView: 2,
         },
         640: {
-          perView: 2,
+          perView: 1,
         },
       },
-    }).mount()
+    }).mount();
+    AOS.init({
+      disable: 'mobile'
+  });
+  AOS.refresh();
 
     return () => {
       slider.destroy()
@@ -88,7 +92,7 @@ useEffect(() => {
 
   return (
            <>
-            <div className="glide-03 relative w-[95%] mt-14 mx-auto">
+            <div className="glide-03 relative w-[95%] mt-14 mx-auto" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <h2 className="featured-heading text-4xl">Most Popular Course</h2>
       <p className="sub-heading">Explore our top-rated and highly recommended course below.</p>
            

@@ -1,10 +1,16 @@
 import React , {useState,useEffect} from 'react';
 import StatCard from "./StatCard";
 
-const GlanceSec = () => {
+const GlanceSec = ({AOS}) => {
+  useEffect(() => {
+    AOS.init({
+        disable: 'mobile'
+    });
+    AOS.refresh();
+  }, [AOS]); 
 
   return (
-    <div className="bg-gray-100 p-8">
+    <div className="bg-gray-100 p-8" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">Company Stats</h1>
 

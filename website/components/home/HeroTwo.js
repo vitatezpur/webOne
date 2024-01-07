@@ -2,7 +2,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {useEffect,useState} from 'react'
 import Slider from 'react-slick';
-import {stats} from '../../datax/stats'
+import {stats} from '../../datax/stats';
+import Link from 'next/link';
 
 // import Footer from '../common/Footer'
 import { FaGraduationCap } from 'react-icons/fa';
@@ -57,12 +58,11 @@ function HeroTwo() {
         <p className="text-base sm:text-lg md:text-xl mb-8">
           Empowering Minds, Shaping Futures in IT and Design Education
         </p>
-        <a
-          href="#courses" // Replace with the actual link to the courses section
-          className="bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg hover:bg-blue-600 transition duration-300"
-        >
+        <Link href="/courses" passHref legacyBehavior>
+        <a className="bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg hover:bg-blue-600 transition duration-300">
           Explore Courses
         </a>
+        </Link>
       </div>
       <div className=" lg:block absolute top-0 left-0">
      

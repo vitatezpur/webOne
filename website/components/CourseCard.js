@@ -1,4 +1,3 @@
-// CourseCard.js
 import React from 'react';
 import Link from 'next/link';
 import { FaDownload } from 'react-icons/fa';
@@ -6,7 +5,7 @@ import { duration } from 'moment';
 
 const CourseCard = ({ title, description, tags, alt, img,duration }) => {
   return (
-    <Link href="/enrollnow">
+    <Link href="/enrollnow" passHref legacyBehavior>
     <div  className="max-w-sm min-w-[40%] rounded overflow-hidden shadow-lg m-4 transition-transform duration-300 transform hover:scale-105">
       <img className="w-full" src={img} alt={alt} />
       <div className="px-6 py-4">

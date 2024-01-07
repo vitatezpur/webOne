@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{useEffect} from "react";
 
-const AlumniSection = () => {
+const AlumniSection = ({AOS}) => {
   const alumniData = [
     {
       id: 1,
@@ -12,9 +12,15 @@ const AlumniSection = () => {
     },
     // Add more alumni data as needed
   ];
+  useEffect(() => {
+    AOS.init({
+        disable: 'mobile'
+    });
+    AOS.refresh();
+  }, [AOS]);
 
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="bg-gray-100 py-12" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">Our Proud Alumni</h2>
         <p className="text-gray-600">
