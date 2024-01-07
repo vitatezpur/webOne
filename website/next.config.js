@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     domains: ['localhost','placekitten.com'],
     remotePatterns: [
@@ -11,6 +11,7 @@ const nextConfig = {
         pathname: '/',
       }],
   },
+  
 }
 
 module.exports = nextConfig

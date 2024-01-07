@@ -1,15 +1,11 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 
 import HtmlHead from '@/components/HtmlHead';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
-import { useState } from 'react';
-// import Slider from '@/components/home/Slider';
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import Hero from '@/components/home/Hero';
 import HeroTwo from '@/components/home/HeroTwo';
-
 
 const courseInfo=[
   {
@@ -62,26 +58,19 @@ import CourseSec from '@/components/home/CourseSec';
 import ContactForm from '@/components/common/ContactForm';
 import AlumniSection from '@/components/AlumniSection';
 import StudentTestimonials from '@/components/StudentTestimonials';
-import CourseSec2 from '@/components/home/CourseSec2';
 import GlanceSec from '@/components/home/GlanceSec';
 
-function index() {
+function index() { 
+const [formData,setFormData] = useState({name:'',email:'',mobile:'',course:'',message:''});
 
-
-  
   return (
     <>
     <HtmlHead/>
     
     <Header/>
     <HeroTwo/>
+    <ContactForm formData = {formData} setFormData = {setFormData}/>
     <CourseSec AOS={AOS}/>
-  
-    <div className='p-20'>
-      <h5 className='text-4xl'>Have a Dought ?</h5>
-<p className='text-sm'>Hey you can contact us anytime</p>
-<ContactForm/>
-    </div>
     <AlumniSection/>
     <StudentTestimonials/>
     <GlanceSec/>
