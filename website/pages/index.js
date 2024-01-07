@@ -63,6 +63,7 @@ import ContactForm from '@/components/common/ContactForm';
 import AlumniSection from '@/components/AlumniSection';
 import StudentTestimonials from '@/components/StudentTestimonials';
 import CourseSec2 from '@/components/home/CourseSec2';
+import GlanceSec from '@/components/home/GlanceSec';
 
 function index() {
 
@@ -83,6 +84,7 @@ function index() {
     </div>
     <AlumniSection/>
     <StudentTestimonials/>
+    <GlanceSec/>
     <Footer/>
    
     </>

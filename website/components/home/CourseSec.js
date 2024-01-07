@@ -76,7 +76,7 @@ useEffect(() => {
           perView: 2,
         },
         640: {
-          perView: 1,
+          perView: 2,
         },
       },
     }).mount()
@@ -89,6 +89,9 @@ useEffect(() => {
   return (
            <>
             <div className="glide-03 relative w-[95%] mt-14 mx-auto">
+            <h2 className="featured-heading text-4xl">Most Popular Course</h2>
+      <p className="sub-heading">Explore our top-rated and highly recommended course below.</p>
+           
               <div className="overflow-hidden" data-glide-el="track">
               <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
                 { courseInfo && courseInfo.length > 0 && courseInfo.map((course,ids)=>{
