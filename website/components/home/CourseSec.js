@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import Glide from "@glidejs/glide";
 
-export default function CourseSec({AOS}) {
+
+export default function CourseSec() {
   const courseInfo = [
     {// ... your course information array
     id:2,
-    title: " PGDCA",
+    title: "PGDCA",
     duration:"12 Month",
-    img:"https://placekitten.com/300/200",
+    img:"/assets/img/dca.png",
     description:" some text for Description of the course.Some more text for Description of the course.",
     tags: ["PGDCA","Word","Excel","Tally","Canva"],
     isPopular:true
@@ -16,7 +17,7 @@ export default function CourseSec({AOS}) {
     id:3,
     title: " PGDCA",
     duration:"12 Month",
-    img:"https://placekitten.com/300/200",
+    img:"/assets/img/aslid.jpg",
     description:" some text for Description of the course.Some more text for Description of the course.",
     tags: ["PGDCA","Word","Excel","Tally","Canva"],
     isPopular:true
@@ -79,11 +80,7 @@ useEffect(() => {
           perView: 1,
         },
       },
-    }).mount();
-    AOS.init({
-      disable: 'mobile'
-  });
-  AOS.refresh();
+    }).mount()
 
     return () => {
       slider.destroy()
@@ -92,10 +89,12 @@ useEffect(() => {
 
   return (
            <>
-            <div className="glide-03 relative w-[95%] mt-14 mx-auto" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-            <h2 className="featured-heading text-4xl">Most Popular Course</h2>
-      <p className="sub-heading">Explore our top-rated and highly recommended course below.</p>
-           
+            <div className="mx-auto max-w-screen-xl  py-12 sm:px-6 lg:px-8 lg:py-16">
+            <div className="glide-03 relative w-[100%]  ">
+              <div className=" py-5">
+            <h2 className="text-3xl font-bold sm:text-4xl  ">Most Popular Course</h2>
+      <p className="sub-heading ">Explore our top-rated and highly recommended course below.</p>
+      </div>
               <div className="overflow-hidden" data-glide-el="track">
               <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
                 { courseInfo && courseInfo.length > 0 && courseInfo.map((course,ids)=>{
@@ -208,6 +207,7 @@ useEffect(() => {
           >
             <span className="block h-2 w-2 rounded-full bg-white/20 ring-1 ring-slate-700 transition-colors duration-300 focus:outline-none"></span>
           </button>
+        </div>
         </div>
         </>
          );

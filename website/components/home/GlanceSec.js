@@ -12,7 +12,7 @@ const GlanceSec = ({AOS}) => {
   return (
     <div className="bg-gray-100 p-8" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Company Stats</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Vintage IT Academy at a Glance</h1>
 
         <div className="flex flex-wrap -mx-4">
           <StatCard value="13+" label="Years of Experience" color="blue" />

@@ -6,6 +6,16 @@ import Footer from '@/components/common/Footer';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import HeroTwo from '@/components/home/HeroTwo';
+import CourseSec from '@/components/home/CourseSec';
+import ContactForm from '@/components/common/ContactForm';
+import AlumniSection from '@/components/AlumniSection';
+// import StudentTestimonials from '@/components/StudentTestimonials';
+import GlanceSec from '@/components/home/GlanceSec';
+import Testimonial from '@/components/Testimonial';
+import Whyus from '@/components/home/Whyus';
+// import WhatsAap from '@/components/common/WhatsAap';
+import WhatsAppIcon from '@/components/common/WhatsAppIcon';
+import PlacementPartner from '@/components/PlacementPartner';
 
 const courseInfo=[
   {
@@ -54,11 +64,8 @@ const courseInfo=[
     isPopular:true
   }
 ]
-import CourseSec from '@/components/home/CourseSec';
-import ContactForm from '@/components/common/ContactForm';
-import AlumniSection from '@/components/AlumniSection';
-import StudentTestimonials from '@/components/StudentTestimonials';
-import GlanceSec from '@/components/home/GlanceSec';
+
+
 
 function index() { 
 const [formData,setFormData] = useState({name:'',email:'',mobile:'',course:'',message:''});
@@ -69,11 +76,18 @@ const [formData,setFormData] = useState({name:'',email:'',mobile:'',course:'',me
     
     <Header/>
     <HeroTwo AOS={AOS}/>
-    <ContactForm formData = {formData} setFormData = {setFormData}/>
     <CourseSec AOS={AOS}/>
-    <AlumniSection AOS={AOS}/>
-    <StudentTestimonials AOS={AOS}/>
+    <ContactForm formData = {formData} setFormData = {setFormData}/>
+   
+    <Whyus/>
     <GlanceSec AOS={AOS}/>
+    <PlacementPartner AOS={AOS}/>
+    <AlumniSection AOS={AOS}/>
+   
+    {/* <StudentTestimonials AOS={AOS}/> */}
+    <Testimonial AOS={AOS}/>
+    <WhatsAppIcon phoneNumber="+918011746848"/>
+    
     <Footer/>
    
     </>

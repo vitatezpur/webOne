@@ -4,6 +4,7 @@ import {useEffect,useState} from 'react'
 import Slider from 'react-slick';
 import {stats} from '../../datax/stats';
 import Link from 'next/link';
+// import banner1 from "../../public/assets/img/banner1.png"
 
 // import Footer from '../common/Footer'
 import { FaGraduationCap } from 'react-icons/fa';
@@ -11,7 +12,7 @@ import { FaGraduationCap } from 'react-icons/fa';
 function HeroTwo() {
   const backgroundImageUrl = 'https://images.unsplash.com/photo-1480506132288-68f7705954bd?q=80&w=1840&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
   const carouselImages = [
-    'https://plus.unsplash.com/premium_photo-1682098120982-6d2bb64f64a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    '/assets/img/banner1.png',
     'https://images.unsplash.com/photo-1568658176307-bfbd2873abda?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://plus.unsplash.com/premium_photo-1681483567775-2f447b13431a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     // Add more image URLs as needed
@@ -35,7 +36,7 @@ function HeroTwo() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       <div className="max-w-4xl  w-full text-center relative z-10 mx-5 ">
-      <div className='mx-10'>
+      <div className='mx-10 my-10'>
       <Slider {...settings}>
             {carouselImages.map((image, index) => (
             
@@ -59,7 +60,7 @@ function HeroTwo() {
           Empowering Minds, Shaping Futures in IT and Design Education
         </p>
         <Link href="/courses" passHref legacyBehavior>
-        <a className="bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg hover:bg-blue-600 transition duration-300">
+        <a className="bg-blue-500 text-white px-10 sm:px-6 py-6 sm:py-3 rounded text-base sm:text-lg hover:bg-blue-600 transition duration-300">
           Explore Courses
         </a>
         </Link>
