@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 
 const  Loadings=({forceloading})=> {
     const router = useRouter();
-
     const [loading, setLoading] = useState(false);
 
 
@@ -11,20 +10,32 @@ useEffect(()=>{
 setLoading(forceloading);
 },[forceloading]);
 
-    useEffect(() => {
-        const handleStart = (url) => (url !== router.asPath) && setLoading(true);
-        const handleComplete = (url) => (url === router.asPath) && setLoading(false);
+const handleStart = (url) => {
+  if (url !== router.asPath) {
+    console.log('Loading started:', url);
+    setLoading(true);
+  }
+};
 
-        router.events.on('routeChangeStart', handleStart)
-        router.events.on('routeChangeComplete', handleComplete)
-        router.events.on('routeChangeError', handleComplete)
+const handleComplete = (url) => {
+      console.log('Loading completed:', url);
+      setLoading(false);  
+};
 
-        return () => {
-            router.events.off('routeChangeStart', handleStart)
-            router.events.off('routeChangeComplete', handleComplete)
-            router.events.off('routeChangeError', handleComplete)
-        }
-    })
+
+useEffect(() => {
+  router.events.on('routeChangeStart', handleStart);
+  router.events.on('routeChangeComplete', handleComplete);
+  router.events.on('routeChangeError', handleComplete);
+
+  return () => {
+    router.events.off('routeChangeStart', handleStart);
+    router.events.off('routeChangeComplete', handleComplete);
+    router.events.off('routeChangeError', handleComplete);
+  };
+});
+
+
     return loading && (                 
       <div className="loader">
         <div role="status">

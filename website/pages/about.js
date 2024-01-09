@@ -157,8 +157,8 @@ export default function AboutPageOne() {
         </div>
         {/* TEAM */}
         <div className="grid grid-cols-1 gap-4 gap-y-6 border-b border-gray-300 py-12 pb-20 md:grid-cols-2 lg:grid-cols-4">
-          {users.map((user) => (
-            <div className="rounded-md border" key={user.name}>
+          {users.map((user , kk) => (
+            <div key={kk} className="rounded-md border">
               <img
                 src={user.image}
                 alt={user.name}

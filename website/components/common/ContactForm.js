@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import ReactDOM from "react-dom";
 
-export default function ModalForm({formData,setFormData}) {
+export default function ContactForm({formData,setFormData , isoutside , showSetter , setShowSetter}) {
   const [isShowing, setIsShowing] = useState(false);
   const [error,setError] = useState({name:'',email:'',mobile:'',message:''});
   const [loading,setLoading] = useState(false);
@@ -19,7 +19,11 @@ const wrapperRef = useRef(null);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [wrapperRef])
+  }, [wrapperRef]);
+
+  useEffect(()=>{
+    setIsShowing(showSetter);
+  },[showSetter]);
 
   useEffect(() => {
     let html = document.querySelector("html")
@@ -74,6 +78,13 @@ const wrapperRef = useRef(null);
       }
     }
   }, [isShowing]);
+
+useEffect(()=>{
+if(isShowing === false){
+  setShowSetter(false);
+}
+
+},[isShowing])
 
   const onChangeHandler=(e)=>{
     setFormData({...formData,[e.target.name] : e.target.value});
@@ -181,14 +192,14 @@ const wrapperRef = useRef(null);
 
   return (
     <>
-      <button
+      {!isoutside && <button
         onClick={() => setIsShowing(true)}
         className="fixed right-0 bottom-20 bg-blue-500 text-white rounded-full px-6 py-3 shadow-md hover:bg-blue-600 transition duration-300 focus:outline-none z-40"
       >
         <span>Contact us</span>
         <span className=""></span>
       </button>
-
+     }
       {isShowing && typeof document !== "undefined"
         ? ReactDOM.createPortal(
             <div
@@ -307,7 +318,7 @@ const wrapperRef = useRef(null);
                         placeholder="your Message"
                         onChange={(e)=>onChangeHandler(e)}
                         value = {formData?.message ?? ''}
-                        className={`peer relative h-10 w-full rounded border ${error?.message !=="" ? 'border-pink-500 text-pink-500' : 'border-slate-200 text-slate-500'} px-4 text-sm placeholder-transparent outline-none transition-all autofill:bg-white focus:border-emerald-500 focus:outline-none invalid:border-pink-500 invalid:text-pink-500 invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400`}
+                        className={`peer relative h-10 w-full pt-3 rounded border ${error?.message !=="" ? 'border-pink-500 text-pink-500' : 'border-slate-200 text-slate-500'} px-4 text-sm placeholder-transparent outline-none transition-all autofill:bg-white focus:border-emerald-500 focus:outline-none invalid:border-pink-500 invalid:text-pink-500 invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400`}
                       />
                       <label
                         htmlFor="id-b13"

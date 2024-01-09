@@ -1,11 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaDownload } from 'react-icons/fa';
-import { duration } from 'moment';
 
-const CourseCard = ({ title, description, tags, alt, img,duration }) => {
+const CourseCard = ({ title, description, tags, alt, img,duration ,id,submitCourseenq , setShowSetter}) => {
+
+
+const opencourselinkform=(value)=>{
+setShowSetter(true);
+submitCourseenq(value);
+}
+
   return (
-    <Link href="/enrollnow" passHref legacyBehavior>
+    
     <div  className="max-w-sm min-w-[40%] rounded overflow-hidden shadow-lg m-4 transition-transform duration-300 transform hover:scale-105">
       <img className="w-full" src={img} alt={alt} />
       <div className="px-6 py-4">
@@ -28,12 +34,10 @@ const CourseCard = ({ title, description, tags, alt, img,duration }) => {
 
       <p className="my-1 px-7 text-sm text-gray-500">Duration:<span className=""><b>{duration}</b></span></p>
 
-      <div className="px-6 py-4 flex">
-        <Link href="/enrollnow">
-          <button className="bg-[#9E0EB3]  text-white font-bold py-2 px-4 rounded mr-2 transition-transform duration-300 transform hover:scale-105">
+      <div className="px-6 py-4 flex">  
+          <button onClick={()=>opencourselinkform(id)} className="bg-[#9E0EB3]  text-white font-bold py-2 px-4 rounded mr-2 transition-transform duration-300 transform hover:scale-105">
             Enroll Now
-          </button>
-        </Link>
+          </button> 
         <Link href="/contactus">
         
         <button className="text-[#000000] border rounded border-[#000000] py-2 px-4 flex items-center transition-transform duration-300 transform hover:scale-105">
@@ -43,8 +47,7 @@ const CourseCard = ({ title, description, tags, alt, img,duration }) => {
         </Link>
       </div>
     </div>
-    </Link>
-  );
+  )
 };
 
 export default CourseCard;

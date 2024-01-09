@@ -1,10 +1,7 @@
-// Navbar.js
-// import Logo from "../../public/assets/img/logo.png"
-// import logo from "../../public/assets/img/vintagLogo.png"
-
 import React, { useState } from 'react';
-import SignUpButton from './SinupBtn';
+import SignUpButton from './Contactus';
 import Link from 'next/link';
+import Contactus from './Contactus';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -66,7 +63,7 @@ const Navbar = () => {
           // Rendering a component for each object
           <Link href={item.href}>{item.name}</Link>
         ))}
-        <SignUpButton/>
+        <Contactus/>
           </div>
         </div>
       )}

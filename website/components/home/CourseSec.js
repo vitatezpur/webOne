@@ -2,62 +2,7 @@ import React, { useEffect } from "react";
 import Glide from "@glidejs/glide";
 
 
-export default function CourseSec() {
-  const courseInfo = [
-    {// ... your course information array
-    id:2,
-    title: "PGDCA",
-    duration:"12 Month",
-    img:"/assets/img/dca.png",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:true
-  },
-  {
-    id:3,
-    title: " PGDCA",
-    duration:"12 Month",
-    img:"/assets/img/aslid.jpg",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:true
-  },
-  {
-    id:4,
-    title: " PGDCA",
-    duration:"12 Month",
-    img:"https://placekitten.com/300/200",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:true
-  },
-  {
-    id:5,
-    title: " PGDCA",
-    duration:"12 Month",
-    img:"https://placekitten.com/300/200",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:false
-  },
-  {
-    id:6,
-    title: " PGDCA",
-    duration:"12 Month",
-    img:"https://placekitten.com/300/200",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:true
-  }, {
-    id:6,
-    title: " PGDCA",
-    duration:"12 Month",
-    img:"https://placekitten.com/300/200",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"],
-    isPopular:true
-  }
-  ];
+export default function CourseSec({courseInfo}) {
 
 useEffect(() => {
     const slider = new Glide(".glide-03", {

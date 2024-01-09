@@ -1,67 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Menu, X, Check } from 'lucide-react';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import CourseCard from '@/components/CourseCard';
+import ContactForm from '@/components/common/ContactForm';
+import {faqs} from '@/datax/faq';
+import {courseInfo} from '@/datax/courseInfo';
 
-const courseInfo=[
-  {
-    key:1,
-    titel: " PGDCA",
-    duration:"12 Month",
-    img:"https://placekitten.com/300/200",
-    description:" some text for Description of the course.Some more text for Description of the course.",
-    tags: ["PGDCA","Word","Excel","Tally","Canva"]
-  }
-]
 
-const faqs = [
-  [
-    {
-      question: 'Is there a free trial available?',
-      answer:
-        'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.',
-    },
-    {
-      question: 'Can I change my plan later?',
-      answer:
-        'Of course. Our pricing scales with your company. Chat to our friendly team to find a solution that works for you.',
-    },
-    {
-      question: 'What is your cancellation policy?',
-      answer:
-        'We understand that things change. You can cancel your plan at any time and we’ll refund you the difference already paid.',
-    },
-  ],
-  [
-    {
-      question: 'Can other info be added to an invoice?',
-      answer:
-        'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.',
-    },
-    {
-      question: 'How does billing work?',
-      answer:
-        'Plans are per workspace, not per account. You can upgrade one workspace, and still have any number of free workspaces.',
-    },
-    {
-      question: 'How do I change my account email?',
-      answer:
-        'You can change the email address associated with your account by going to account from a laptop or desktop.',
-    },
-  ],
-]
 
 export default function PricingPageOne() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [formData,setFormData] = useState({name:'',email:'',mobile:'',course:'',message:''});
+  const [showSetter,setShowSetter] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const submitCourseenq=(id)=>{
+ if(id !==""){
+  let coursedd = courseInfo.filter((course)=>course.id === id)?.[0] ?? null;
+  if(coursedd){
+    setFormData({...formData,message:coursedd?.titel ?? '',course:id});
+  }
+ }
+  }
+
   return (
     <>
     <Header/>
+    <ContactForm formData = {formData} setFormData = {setFormData} isoutside={true} showSetter = {showSetter} setShowSetter={setShowSetter}/>
     <div className="mx-auto max-w-7xl px-2 md:px-4">   
       <div>
         <div className="flex flex-col space-y-8 pb-10 pt-12 text-center md:pt-24">
@@ -75,7 +44,7 @@ export default function PricingPageOne() {
         <div className="mt-8 w-full space-y-4  md:mt-12">
           <div className="grid space-y-8  lg:grid-cols-3 lg:space-x-8 lg:space-y-4">
             {courseInfo.map((course)=>(
-                  <CourseCard key={course.key} title={course.titel} description={course.description} tags={course.tags} img={course.img} alt={course.description} duration={course.duration} />
+                  <CourseCard id={course.id} title={course.titel} description={course.description} tags={course.tags} img={course.img} alt={course.description} duration={course.duration} submitCourseenq={submitCourseenq} setShowSetter={setShowSetter} />
             )
 
             )}        
@@ -121,7 +90,7 @@ export default function PricingPageOne() {
                   </p>
                 </div>
                 <button
-                  type="button"
+                  type="button" onClick={()=>setShowSetter(true)}
                   className="mt-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black md:mt-0"
                 >
                   Get in Touch
